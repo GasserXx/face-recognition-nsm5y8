@@ -5,31 +5,7 @@ import { ExploreContainerComponentModule } from '../explore-container/explore-co
 
 import { Tab1Page } from './tab1.page';
 
-import { Component } from '@angular/core';
-
-@Component({
-  selector: 'app-tab1',
-  templateUrl: 'tab1.page.html',
-  styleUrls: ['tab1.page.scss']
-})
-export class Tab1Page {
-
-  constructor() {}
-
-  uploadPhoto() {
-    const fileInput = document.createElement('input');
-    fileInput.type = 'file';
-    fileInput.accept = 'image/*';
-    fileInput.onchange = (e: any) => {
-      const file = e.target.files[0];
-      // Handle the file here (e.g., show preview, upload to server, etc.)
-    };
-    fileInput.click();
-  }
-
-}
-
-describe('Tab1Page', () =
+describe('Tab1Page', () => {
   let component: Tab1Page;
   let fixture: ComponentFixture<Tab1Page>;
 

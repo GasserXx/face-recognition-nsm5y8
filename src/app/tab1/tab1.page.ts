@@ -30,11 +30,16 @@ export class Tab1Page {
   }
 
   confirmPhoto() {
-    // Implement the confirmation logic, like uploading to a server or storing the image
-    console.log('Photo confirmed:', this.imageData);
+    const images = JSON.parse(localStorage.getItem('confirmedImages') || '[]');
+    images.push(this.imageData);
+    localStorage.setItem('confirmedImages', JSON.stringify(images));
+    this.resetUpload(); // Clear the current image after confirmation
   }
+  
 
   resetUpload() {
     this.imageData = null;
   }
+
+  
 }
